@@ -5,6 +5,7 @@ let masterName = document.getElementById('masterName');
 let gif = document.getElementById('gif');
 let first = document.getElementById('0');
 
+
 let songs = [
     {songName:"Ek_Zindagi" , filepath:"songs/1.m4a" , coverPath:"cover/Ek-Zindagi.jpeg"},
     {songName:"Dil aaj kl" , filepath:"songs/2.m4a" , coverPath:"cover/dil_aaj_kl.jpg"},
@@ -73,11 +74,13 @@ function makeAllPause(){
 
 Array.from(document.getElementsByClassName('play')).forEach(function(element){
     element.addEventListener('click',function(e){
-        // makeAllPause();
+        makeAllPause();
         masterName.innerText = songs[e.target.id].songName;
        audioElement.src = songs[e.target.id].filepath;
        playy(e.target);
 
     })
 })
+ 
+
  
